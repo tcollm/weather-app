@@ -24,9 +24,27 @@ export const WEATHER = (function () {
 
             const weatherData = await response.json();
 
-            console.log(weatherData);
+            // format weather array
+            const weatherArr = weatherData.days.map((day) => {
+                return {
+                    date: day.datetime,
+                    conditions: day.conditions,
+                    temp: day.temp,
+                    tempMax: day.tempmax,
+                    tempMin: day.tempmin,
+                };
+            });
+
+            console.log(weatherArr);
         } catch {}
     }
 
     return { fetchWeather };
 })();
+
+// days[0]
+// datetime
+// conditions
+// temp
+// tempmax
+// tempmin
