@@ -24,6 +24,10 @@ export const WEATHER = (function () {
 
             const weatherData = await response.json();
 
+            if (!weatherData) {
+                throw new Error("Failed to get weather data json file.");
+            }
+
             // format weather array
             const weatherArr = weatherData.days.map((day) => {
                 return {
@@ -34,17 +38,10 @@ export const WEATHER = (function () {
                     tempMin: day.tempmin,
                 };
             });
-
-            console.log(weatherArr);
-        } catch {}
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     return { fetchWeather };
 })();
-
-// days[0]
-// datetime
-// conditions
-// temp
-// tempmax
-// tempmin
