@@ -1,8 +1,7 @@
+import FORM from "./view.js";
 import "./styles.css";
-import { WEATHER } from "./weather.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const weather = WEATHER;
-
-    weather.fetchWeather("london");
+    const form = FORM;
+    form.init();
 });
