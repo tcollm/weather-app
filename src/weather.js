@@ -38,6 +38,8 @@ export const WEATHER = (function () {
                     tempMin: day.tempmin,
                 };
             });
+
+            return weatherArr;
         } catch (err) {
             console.error(err);
         }
