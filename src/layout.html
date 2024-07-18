@@ -7,73 +7,85 @@
         <link rel="stylesheet" href="layout.css" />
     </head>
     <body>
-        <header>
-            <h1>7 Day Weather</h1>
-            <span>Location, ST</span>
-            <hr />
-        </header>
-        <div class="day" id="0">
-            <div>Date 17</div>
-            <div>
-                <div>47&deg;</div>
+        <div class="search">
+            <form id="weather-form">
+                <label for="location">Enter Location: </label>
+                <input type="text" id="location" required />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="weather-block">
+            <div class="header">
+                <div class="title">
+                    <h1>7 Day Weather</h1>
+                    <div>- Location, ST</div>
+                </div>
+                <hr />
+            </div>
+            <div class="day" id="0">
+                <div>Date 17</div>
+                <div>
+                    <div>47&deg;</div>
+                    <!-- \u00B0 -->
+                    <div>*Logo*</div>
+                    <div>Max</div>
+                    <div>Min</div>
+                </div>
+                <div>
+                    Description description more description. Even longer
+                    description. Describing the weather out right now.
+                    Description.
+                </div>
+            </div>
+            <div class="day" id="1">
+                <div>date</div>
+                <div><em>Max</em>/Min</div>
                 <!-- \u00B0 -->
                 <div>*Logo*</div>
-                <div>Max</div>
-                <div>Min</div>
+                <div>Short Description</div>
             </div>
-            <div>
-                Description description more description. Even longer
-                description. Describing the weather out right now. Description.
+            <div class="day" id="2">
+                <div>date</div>
+                <div><em>Max</em>/Min</div>
+                <!-- \u00B0 -->
+                <div>*Logo*</div>
+                <div>Short Description</div>
             </div>
-        </div>
-        <div class="day" id="1">
-            <div>date</div>
-            <div><em>Max</em>/Min</div>
-            <!-- \u00B0 -->
-            <div>*Logo*</div>
-            <div>Short Description</div>
-        </div>
-        <div class="day" id="2">
-            <div>date</div>
-            <div><em>Max</em>/Min</div>
-            <!-- \u00B0 -->
-            <div>*Logo*</div>
-            <div>Short Description</div>
-        </div>
-        <div class="day" id="3">
-            <div>date</div>
-            <div><em>Max</em>/Min</div>
-            <!-- \u00B0 -->
-            <div>*Logo*</div>
-            <div>Short Description</div>
-        </div>
-        <div class="day" id="4">
-            <div>date</div>
-            <div><em>Max</em>/Min</div>
-            <!-- \u00B0 -->
-            <div>*Logo*</div>
-            <div>Short Description</div>
-        </div>
-        <div class="day" id="5">
-            <div>date</div>
-            <div><em>Max</em>/Min</div>
-            <!-- \u00B0 -->
-            <div>*Logo*</div>
-            <div>Short Description</div>
-        </div>
-        <div class="day" id="6">
-            <div>date</div>
-            <div><em>Max</em>/Min</div>
-            <!-- \u00B0 -->
-            <div>*Logo*</div>
-            <div>Short Description</div>
-        </div>
-        <div class="day" id="7">
-            <div>date</div>
-            <div><em>Max</em>/Min</div>
-            <!-- \u00B0 -->
-            <div>*Logo*</div>
-            <div>Short Description</div>
+            <div class="day" id="3">
+                <div>date</div>
+                <div><em>Max</em>/Min</div>
+                <!-- \u00B0 -->
+                <div>*Logo*</div>
+                <div>Short Description</div>
+            </div>
+            <div class="day" id="4">
+                <div>date</div>
+                <div><em>Max</em>/Min</div>
+                <!-- \u00B0 -->
+                <div>*Logo*</div>
+                <div>Short Description</div>
+            </div>
+            <div class="day" id="5">
+                <div>date</div>
+                <div><em>Max</em>/Min</div>
+                <!-- \u00B0 -->
+                <div>*Logo*</div>
+                <div>Short Description</div>
+            </div>
+            <div class="day" id="6">
+                <div>date</div>
+                <div><em>Max</em>/Min</div>
+                <!-- \u00B0 -->
+                <div>*Logo*</div>
+                <div>Short Description</div>
+            </div>
+            <div class="day" id="7">
+                <div>date</div>
+                <div><em>Max</em>/Min</div>
+                <!-- \u00B0 -->
+                <div>*Logo*</div>
+                <div>Short Description</div>
+            </div>
         </div>
     </body>
 </html>
