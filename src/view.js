@@ -135,14 +135,14 @@ export const FORM = (function () {
             const maxMinDiv = document.createElement("div");
 
             const max = document.createElement("strong");
-            zeroMax.textContent = `${weatherArr[i].tempMax}\u00B0 `;
+            max.textContent = `${weatherArr[i].tempMax}\u00B0 `;
 
             const min = document.createTextNode(
                 `/ ${weatherArr[i].tempMin}\u00B0`
             );
 
-            maxMinDiv.appendChild(zeroMax);
-            maxMinDiv.appendChild(textNode);
+            maxMinDiv.appendChild(max);
+            maxMinDiv.appendChild(min);
             tempDiv.appendChild(maxMinDiv);
 
             const logoDiv = document.createElement("div");
