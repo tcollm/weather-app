@@ -1,16 +1,8 @@
-import moment from "moment";
+import { DATE } from "./date";
 
 export const WEATHER = (function () {
-    function getDate() {
-        const date = moment();
-        const currDate = date.format("YYYY-MM-DD");
-        const nextDate = date.add(7, "days").format("YYYY-MM-DD");
-
-        return [currDate, nextDate];
-    }
-
     async function fetchWeather(location = "golden") {
-        const [cDate, nDate] = getDate();
+        const [cDate, nDate] = DATE.getDate();
 
         try {
             const response = await fetch(
