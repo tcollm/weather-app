@@ -61,7 +61,7 @@ export const FORM = (function () {
         header.appendChild(headerHr);
         weatherBlock.appendChild(header);
 
-        // ZERO
+        // DAY ZERO
         const zero = document.createElement("div");
         zero.classList.add("day");
         zero.id = "zero";
@@ -119,6 +119,45 @@ export const FORM = (function () {
         weatherBlock.appendChild(zeroHr);
 
         // DAY ONE - SIX
+        for (let i = 1; i <= 6; i++) {
+            // Create the day div and set its id
+            const dayDiv = document.createElement("div");
+            dayDiv.className = "day";
+            dayDiv.id = i.toString();
+
+            const dateDiv = document.createElement("div");
+            dateDiv.textContent = DATE.formatDate(weatherArr[i].date);
+            dayDiv.appendChild(dateDiv);
+
+            const tempDiv = document.createElement("div");
+            dayDiv.appendChild(tempDiv);
+
+            const maxMinDiv = document.createElement("div");
+
+            const max = document.createElement("strong");
+            zeroMax.textContent = `${weatherArr[i].tempMax}\u00B0 `;
+
+            const min = document.createTextNode(
+                `/ ${weatherArr[i].tempMin}\u00B0`
+            );
+
+            maxMinDiv.appendChild(zeroMax);
+            maxMinDiv.appendChild(textNode);
+            tempDiv.appendChild(maxMinDiv);
+
+            const logoDiv = document.createElement("div");
+            logoDiv.textContent = "*Logo*";
+            dayDiv.appendChild(logoDiv);
+
+            const descDiv = document.createElement("div");
+            descDiv.textContent = weatherArr[i].conditions;
+            dayDiv.appendChild(descDiv);
+
+            weatherBlock.appendChild(dayDiv);
+
+            const hr = document.createElement("hr");
+            weatherBlock.appendChild(hr);
+        }
     }
 
     return { init };
