@@ -61,7 +61,42 @@ body {
     font-size: 1.9rem;
 }
 
-.weather-block hr {
-    border: 1px solid var(--dark-blue);
-    border-top: 1px solid var(--dark-blue);
+.day {
+    padding: 12px;
+    display: flex;
+    gap: 16px;
 }
+
+.day strong {
+    font-size: 1.2rem;
+}
+
+/* first day */
+#zero {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 28px 12px 12px 12px;
+}
+
+#date {
+    font-weight: 600;
+}
+
+.day-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0px;
+}
+
+.day-container #left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.day-container #temp {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+/* end first day */
