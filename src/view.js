@@ -18,7 +18,7 @@ export const FORM = (function () {
                 const weatherReport = await weather.fetchWeather(location);
                 console.log(weatherReport);
 
-                // await renderWeatherBlock(location, weatherReport);
+                renderWeatherBlock(location, weatherReport);
             } catch {
                 console.error("Error fetching weather data:", error);
             }
