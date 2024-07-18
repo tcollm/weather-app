@@ -100,3 +100,7 @@ body {
     font-weight: 600;
 }
 /* end first day */
+
+.day:not(:first-child) {
+    gap: 16px;
+}

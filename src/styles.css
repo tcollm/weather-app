@@ -100,3 +100,10 @@ body {
     font-weight: 600;
 }
 /* end first day */
+
+.day:not(:first-child) {
+    display: grid;
+    /* TODO: wrap temps and logo together */
+    grid-template-columns: repeat(4, calc(50% / 4));
+    grid-template-rows: 1fr;
+}
