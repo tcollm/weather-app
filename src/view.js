@@ -8,6 +8,11 @@ export const FORM = (function () {
         addEventListeners();
     }
 
+    function capitalizeFirst(str) {
+        str.toLowerCase();
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
     function addEventListeners() {
         const submit = document.getElementById("weather-form");
         submit.addEventListener("submit", async (event) => {
@@ -16,7 +21,7 @@ export const FORM = (function () {
 
             try {
                 const weatherReport = await weather.fetchWeather(location);
-                console.log(weatherReport);
+                // console.log(weatherReport);
 
                 renderWeatherBlock(location, weatherReport);
             } catch {
@@ -27,14 +32,13 @@ export const FORM = (function () {
 
     // generate html and pull textContent from weather array
     function renderWeatherBlock(location, weatherArr) {
-        const body = document.querySelector("body");
+        const wrapper = document.querySelector(".weather-block-wrapper");
+        wrapper.innerHTML = "";
 
-        // Create the main weather block container
         const weatherBlock = document.createElement("div");
         weatherBlock.classList.add("weather-block");
-        body.appendChild(weatherBlock);
+        wrapper.appendChild(weatherBlock);
 
-        // Create and populate the header
         const header = document.createElement("div");
         header.classList.add("header");
 
@@ -46,7 +50,8 @@ export const FORM = (function () {
 
         const locationDiv = document.createElement("div");
         locationDiv.id = "location";
-        locationDiv.textContent = `- ${location}`;
+        const formattedLoc = capitalizeFirst(location);
+        locationDiv.textContent = `- ${formattedLoc}`;
 
         const headerHr = document.createElement("hr");
 
@@ -76,7 +81,7 @@ export const FORM = (function () {
 
         const tempDiv = document.createElement("div");
         tempDiv.id = "temp";
-        tempDiv.textContent = weatherArr[0].temp;
+        tempDiv.textContent = `${weatherArr[0].temp}\u00B0`;
 
         const logoDiv = document.createElement("div");
         // TODO: get logo based on conditions (create new file for this functionality)
@@ -91,9 +96,11 @@ export const FORM = (function () {
         const maxMinDiv = document.createElement("div");
 
         const zeroMax = document.createElement("strong");
-        zeroMax.textContent = weatherArr[0].tempMax;
+        zeroMax.textContent = `${weatherArr[0].tempMax}\u00B0 `;
 
-        const textNode = document.createTextNode(`/${weatherArr[0].tempMin}`);
+        const textNode = document.createTextNode(
+            `/ ${weatherArr[0].tempMin}\u00B0`
+        );
 
         maxMinDiv.appendChild(zeroMax);
         maxMinDiv.appendChild(textNode);
@@ -105,7 +112,7 @@ export const FORM = (function () {
         zero.appendChild(dayCont);
 
         const zeroDesc = document.createElement("div");
-        zeroDesc.textContent = "";
+        zeroDesc.textContent = weatherArr[0].conditions;
         zero.appendChild(zeroDesc);
 
         const zeroHr = document.createElement("hr");
