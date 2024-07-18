@@ -9,5 +9,12 @@ export const DATE = (function () {
         return [currDate, nextDate];
     }
 
-    return { getDate };
+    function formatDate(dateString) {
+        return moment(dateString, "YYYY-MM-DD").format("MMMM DD");
+    }
+
+    return {
+        getDate,
+        formatDate,
+    };
 })();
