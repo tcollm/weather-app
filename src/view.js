@@ -9,15 +9,16 @@ export const FORM = (function () {
 
     function addEventListeners() {
         const submit = document.getElementById("weather-form");
-        submit.addEventListener("submit", (event) => {
+        submit.addEventListener("submit", async (event) => {
             event.preventDefault();
             const location = document.getElementById("location").value;
 
-            // causing a 400 error from visual crossing
-            console.log(weather.fetchWeather("london"));
-            const weatherReport = weather.fetchWeather(location);
-            // weather report is printing out a Promise not the data
-            console.log(weatherReport);
+            try {
+                const weatherReport = await weather.fetchWeather(location);
+                console.log(weatherReport);
+            } catch {
+                console.error("Error fetching weather data:", error);
+            }
         });
     }
 
